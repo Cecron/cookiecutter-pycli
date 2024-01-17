@@ -1,0 +1,9 @@
+# Emacs stuff
+*~
+\#*\#
+.\#*
+
+# Python stuff
+.venv
+__pycache__
+
