@@ -1,0 +1,7 @@
+{
+    "full_name": "Mr Cecron",
+    "email": "MrCecron@example.com",
+    "project_name": "Python Boilerplate",
+    "project_short_description": "Python Boilerplate contains some boilerplate for creating a new Python package.",
+    "project_slug": "{{ cookiecutter.project_name.lower().replace(' ', '_').replace('-', '_') }}"
+}
