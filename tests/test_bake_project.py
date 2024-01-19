@@ -33,6 +33,13 @@ def test_bake_static_and_templates(tmpdir):
     )
     assert paths(tmpdir) == {
         "foo",
+        "foo/docs",
+        "foo/docs/Makefile",
+        "foo/docs/make.bat",
+        "foo/docs/source",
+        "foo/docs/source/_static",
+        "foo/docs/source/conf.py",
+        "foo/docs/source/index.rst",
         "foo/src",
         "foo/src/foo",
         "foo/src/foo/foo.py",
