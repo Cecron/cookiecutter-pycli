@@ -39,6 +39,9 @@ def test_bake_static_and_templates(tmpdir):
         "foo/src/foo/cli.py",
         "foo/src/foo/__init__.py",
         "foo/src/foo/foo.py",
+        "foo/tests",
+        "foo/tests/test_main.py",
+        "foo/tox.ini",
         "foo/pyproject.toml",
         "foo/README.rst",
     }
@@ -56,3 +59,15 @@ def test_bake_install_and_run(tmpdir):
     subprocess.check_call(shlex.split('poetry install'))
     result = subprocess.run(shlex.split('foo -v'), capture_output=True, check=True)
     assert result.stdout == b"Hello world\nInvoked with Namespace(log_level='INFO')\n"
+
+
+def test_bake_and_run_tox(tmpdir):
+    generate(
+        tmpdir,
+        {
+            "project_name": "foo",
+            "project_short_description": "blah",
+        },
+    )
+    os.chdir(tmpdir / "foo")
+    subprocess.check_call(shlex.split('tox'))

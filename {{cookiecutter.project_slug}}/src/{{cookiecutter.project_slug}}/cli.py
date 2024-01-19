@@ -39,5 +39,6 @@ def main(argv=None):
 
     return {{ cookiecutter.project_slug }}.main(args)
 
+
 if __name__ == '__main__':
     raise SystemExit(main())

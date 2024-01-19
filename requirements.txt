@@ -1,2 +1,4 @@
 cookiecutter
+poetry
 pytest
+tox
