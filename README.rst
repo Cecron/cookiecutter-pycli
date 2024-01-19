@@ -18,6 +18,16 @@ Generate a Python package project::
 
     cookiecutter https://github.com/Cecron/cookiecutter-pycli.git
 
+Or use Cruft_ instead of Cookiecutter::
+
+    cruft create https://github.com/Cecron/cookiecutter-pycli.git
+
+Now you can update the project with newer versions of the template::
+
+    cruft update
+
+.. _Cruft: https://github.com/Cecron/cookiecutter-pycli.git
+
 Development
 -----------
 
