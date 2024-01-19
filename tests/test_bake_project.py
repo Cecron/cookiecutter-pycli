@@ -19,7 +19,7 @@ def paths(directory):
     return {str(f) for f in paths if str(f) != "."}
 
 
-def test_static_and_templates(tmpdir):
+def test_bake_static_and_templates(tmpdir):
     generate(
         tmpdir,
         {
@@ -29,6 +29,11 @@ def test_static_and_templates(tmpdir):
     )
     assert paths(tmpdir) == {
         "foo",
+        "foo/src",
+        "foo/src/foo",
+        "foo/src/foo/cli.py",
+        "foo/src/foo/__init__.py",
+        "foo/src/foo/foo.py",
         "foo/pyproject.toml",
         "foo/README.rst",
     }
