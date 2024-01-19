@@ -17,3 +17,10 @@ Cookiecutter 1.4.0 or higher)::
 Generate a Python package project::
 
     cookiecutter https://github.com/Cecron/cookiecutter-pycli.git
+
+Development
+-----------
+
+To test this template during development, use pytest::
+
+    pytest
