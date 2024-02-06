@@ -10,6 +10,29 @@ Features
 
 * TODO
 
+Usage
+-----
+
+.. code::
+
+   $ {{ cookiecutter.project_slug }} --help
+
+Development
+-----------
+
+To see available environments in tox run:
+
+.. code::
+
+   $ tox --listenvs
+
+To run pytest manually:
+
+.. code::
+
+   $ pytest
+
+
 Credits
 -------
 

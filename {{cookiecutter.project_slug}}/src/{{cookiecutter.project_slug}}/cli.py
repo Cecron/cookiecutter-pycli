@@ -2,6 +2,7 @@ import argparse
 import logging
 
 from . import {{ cookiecutter.project_slug }}
+from . import commands
 
 LOG_LEVELS = ["DEBUG", "INFO", "WARNING", "ERROR", "CRITICAL"]
 DEFAULT_LOG_LEVEL = "WARNING"
@@ -10,7 +11,9 @@ DEFAULT_LOG_LEVEL = "WARNING"
 def parse_args(argv):
     """Parse incoming arguments."""
     parser = argparse.ArgumentParser()
+    parser.set_defaults(action=None)
 
+    # Global arguments are defined here
     parser.add_argument(
         '-v', '--verbose', dest="log_level", action="append_const", const=-1,
         help="Increase verbosity (debug level) by one.",
@@ -19,6 +22,18 @@ def parse_args(argv):
         '-q', '--quiet', dest="log_level", action="append_const", const=1,
         help="Decrease verbosity (debug level) by one.",
     )
+
+    # Read in subcommands from the commands directory
+    subparsers = parser.add_subparsers(
+        title='Available subcommands',
+        dest='command',
+        help="Type 'sub-command -h' for more information.",
+    )
+    cmds = []
+    cmds.append(commands.Hello())
+
+    for cmd in cmds:
+        cmd.add_subparser(subparsers)
 
     args = parser.parse_args(argv)
 
