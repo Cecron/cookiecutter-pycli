@@ -24,7 +24,13 @@ To see available environments in tox run:
 
 .. code::
 
-   $ tox --listenvs
+   $ tox list
+
+Supply arguments to pytest:
+
+.. code::
+
+   $ tox -- --sw
 
 To run pytest manually:
 
