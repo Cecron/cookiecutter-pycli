@@ -44,6 +44,9 @@ def parse_args(argv):
         log_level = min(len(LOG_LEVELS) - 1, max(log_level + adjustment, 0))
     args.log_level = LOG_LEVELS[log_level]
 
+    if args.action is None:
+        parser.print_help()
+
     return args
 
 
