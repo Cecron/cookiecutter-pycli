@@ -30,13 +30,19 @@ Supply arguments to pytest:
 
 .. code::
 
-   $ tox -- --sw
+   $ tox -e py39 -- --sw
 
 To run pytest manually:
 
 .. code::
 
    $ pytest
+
+Running the application inside the Python debugger:
+
+.. code::
+
+   $ python -m pdb -m {{ cookiecutter.project_slug }} hello
 
 
 Credits
