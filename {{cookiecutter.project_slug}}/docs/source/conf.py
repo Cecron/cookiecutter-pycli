@@ -45,6 +45,8 @@ extensions = [
     'sphinx_rtd_theme',
 ]
 
+html_show_sourcelink = False  # Remove 'View page source' from top of html pages (not python)
+
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']
 
